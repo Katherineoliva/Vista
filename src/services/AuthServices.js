@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = 'https://base-dusky-two.vercel.app/api';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const AuthConecction = async (data) => {
-
     try {
         const res = await axios.post(`${BASE_URL}/auth/login`, data, {
             headers: {
@@ -14,5 +13,5 @@ export const AuthConecction = async (data) => {
     } catch (error) {
         throw error.response;
     }
+};
 
-}
